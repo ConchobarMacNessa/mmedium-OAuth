@@ -10,5 +10,5 @@ module.exports = {
   handler: (req, reply) => {
     const url = "https://github.com/login/oauth/authorize/?" + qs.stringify({client_id: clientID, redirect_uri: callbackURI});
     reply.redirect(url);
-  },
+  }
 };

@@ -8,4 +8,5 @@ module.exports = [
   require('./register_submit'),
   require('./logout'),
   require('./login_github'),
+  require('./welcome'),
 ];
