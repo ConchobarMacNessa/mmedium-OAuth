@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bo-bok/mmedium.git"
+    "url": "git+https://github.com/ConchobarMacNessa/mmedium-OAuth"
   },
   "author": "MMedium",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bo-bok/mmedium/issues"
+    "url": "https://github.com/ConchobarMacNessa/mmedium-OAuth/issues"
   },
-  "homepage": "https://github.com/bo-bok/mmedium#readme",
+  "homepage": "https://github.com/ConchobarMacNessa/mmedium-OAuth#readme",
   "dependencies": {
     "bcrypt": "^1.0.2",
     "env2": "^2.1.1",
