@@ -30,6 +30,7 @@ server.register([inert, vision, cookieAuthModule, contextCredentials], err => {
     cookie: 'mmedium-cookie',
     isSecure: false, //@TODO WHEN ON HEROKU CHANGE TO TRUE
     ttl: 24 * 60 * 60 * 1000 //@TODO test timing works as expected
+
   });
   server.auth.default('base');
   server.views(handlebars);
