@@ -1,6 +1,8 @@
 const hapi = require('hapi');
 const server = new hapi.Server();
 require('env2')('config.env');
+const fs = require('fs');
+const path = require('path');
 
 const inert = require('inert');
 const vision = require('vision');
@@ -13,6 +15,10 @@ const handlebars = require('./handlebars');
 server.connection({
   // host: process.env.HOSTNAME || 'localhost',
   port: process.env.PORT || 4000,
+  tls: {
+    key: fs.readFileSync(path.join(__dirname, '../keys/key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '../keys/cert.pem'))
+  }
 });
 
 console.log(process.env.HOSTNAME || 'localhost');
