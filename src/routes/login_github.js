@@ -2,7 +2,7 @@ const env = require("env2")("./config.env");
 const qs = require("querystring");
 
 const clientID = process.env.CLIENT_ID;
-const callbackURI = process.env.BASE_URL + "/";
+const callbackURI = process.env.BASE_URL + "/welcome";
 
 module.exports = {
   method: 'GET',
