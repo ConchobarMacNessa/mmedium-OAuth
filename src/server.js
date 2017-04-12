@@ -25,13 +25,13 @@ console.log(process.env.HOSTNAME || 'localhost');
 server.register([inert, vision, cookieAuthModule, contextCredentials], err => {
   if (err) throw err;
 
-  server.auth.strategy('base', 'cookie', 'optional', {
+  server.auth.strategy('base', 'cookie', {
     password: process.env.COOKIE_PASSWORD,
     cookie: 'mmedium-cookie',
     isSecure: false, //@TODO WHEN ON HEROKU CHANGE TO TRUE
     ttl: 24 * 60 * 60 * 1000 //@TODO test timing works as expected
   });
-
+  server.auth.default('base');
   server.views(handlebars);
   server.route(routes);
 });
