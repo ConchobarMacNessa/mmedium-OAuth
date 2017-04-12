@@ -15,10 +15,10 @@ const handlebars = require('./handlebars');
 server.connection({
   // host: process.env.HOSTNAME || 'localhost',
   port: process.env.PORT || 4000,
-  tls: {
-    key: fs.readFileSync(path.join(__dirname, '../keys/key.pem')),
-    cert: fs.readFileSync(path.join(__dirname, '../keys/cert.pem'))
-  }
+  // tls: {
+  //   key: fs.readFileSync(path.join(__dirname, '../keys/key.pem')),
+  //   cert: fs.readFileSync(path.join(__dirname, '../keys/cert.pem'))
+  // }
 });
 
 console.log(process.env.HOSTNAME || 'localhost');
