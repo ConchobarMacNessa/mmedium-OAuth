@@ -12,14 +12,25 @@ const contextCredentials = require('hapi-context-credentials');
 const routes = require('./routes');
 const handlebars = require('./handlebars');
 
+
+
 server.connection({
   // host: process.env.HOSTNAME || 'localhost',
   port: process.env.PORT || 4000,
-  // tls: {
-  //   key: fs.readFileSync(path.join(__dirname, '../keys/key.pem')),
-  //   cert: fs.readFileSync(path.join(__dirname, '../keys/cert.pem'))
-  // }
+
+
+  const myMap = new Map();
+
+  myMap.has(('port: 4000')) {
+    tls: {
+      key: fs.readFileSync(path.join(__dirname, '../keys/key.pem')),
+      cert: fs.readFileSync(path.join(__dirname, '../keys/cert.pem'))
+    }
+  }
+
 });
+
+// SSL endpoints
 
 console.log(process.env.HOSTNAME || 'localhost');
 server.register([inert, vision, cookieAuthModule, contextCredentials], err => {
