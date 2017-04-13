@@ -2,6 +2,9 @@ const request = require('request');
 const env = require('env2')('./config.env');
 const cookieAuthModule = require('hapi-auth-cookie');
 const qs = require('querystring');
+const connect = require('../database/db_connect');
+const post = require('./../database/post');
+
 
 module.exports = {
   method: 'GET',
@@ -22,13 +25,20 @@ module.exports = {
             (err, response, bodyString) => {
               if (err) throw err;
               const bodyObj = JSON.parse(bodyString);
-              console.log(bodyObj);
+              const userDetails = {
+                username: bodyObj.login,
+                avatar_url: bodyObj.avatar_url
+              };
+              post.githubUser(userDetails, (err) => {
+                if (err) {
+                  console.log(err);
+                  return;
+                }
+              });
+              req.cookieAuth.set({accessToken: accessToken, username: userDetails.username, avatar_url: userDetails.avatar_url});
+              reply.redirect('/');
             }
           );
-
-          req.cookieAuth.set({accessToken: accessToken});
-          console.log(accessToken);
-          reply.redirect('/');
         });
     }
   }

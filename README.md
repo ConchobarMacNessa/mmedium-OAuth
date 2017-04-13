@@ -1,5 +1,5 @@
 # mmedium-OAuth
-
+https://mmedium-oauth.herokuapp.com/
 
 ## Installation Instructions
 - Clone this repository
@@ -40,4 +40,4 @@ So that I benefit from logging in with Github OAuth, and don't have to do any pr
 
 ### TLS issues
 
-We had a few issues setting up TLS with Heroku and Travis. Heroku needed access to our keys and certs, however there is no way to do this without paying $20/month. However, Heroku is already HTTPS, so the server was only HTTP when running from our local server. There are several work arounds to this, however in the interest of time we decided to remove tls from our local server and rely on Heroku's HTTPS. 
+We had a few issues setting up TLS with Heroku and Travis. Heroku needed access to our keys and certs, however there is no way to do this without paying $20/month. However, Heroku is already HTTPS, so the server was only HTTP when running from our local server. There are several work arounds to this, however in the interest of time we decided to remove tls from our local server and rely on Heroku's HTTPS.

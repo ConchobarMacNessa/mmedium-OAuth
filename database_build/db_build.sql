@@ -4,8 +4,8 @@ DROP TABLE IF EXISTS users, articles CASCADE;
 
 CREATE TABLE users (
   id          SERIAL        PRIMARY KEY,
-  username    VARCHAR(64)   UNIQUE NOT NULL,
-  password    VARCHAR(64)  NOT NULL,
+  username    VARCHAR(64),
+  password    VARCHAR(64),
   avatar_url  VARCHAR(500)
 );
 
