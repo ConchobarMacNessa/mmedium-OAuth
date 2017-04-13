@@ -49,12 +49,11 @@
       <input class="search__input" name="q" type="text" placeholder="Search articles" required autocomplete="off"/>
     </form> -->
     {{#if credentials.username}}
-    <div class='user_credentials'>
-      <img class="item__avatar" src="{{avatar_url}}" alt="user avatar"/>
-      <p class='welcome_note'>Welcome, {{username}}</p>
-    </div>
+      <div class='user_credentials'>
+        <img class="item__avatar" src="{{credentials.avatar_url}}" alt="user avatar"/>
+        <p class='welcome_note'>Welcome, {{credentials.username}}</p>
+      </div>
     {{/if}}
-    {{credentials.username}}
 
 
 
