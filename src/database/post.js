@@ -40,6 +40,14 @@ post.articles = (newArticle, callback) => {
                  VALUES ((SELECT users.id FROM users WHERE users.username = $1), $2, $3, $4, $5)
                  RETURNING id`, [newArticle.username, newArticle.title, newArticle.body_text, newArticle.image_url, newArticle.date ], (err, res) => {
 
+                   if (err) return callback(err);
+
+                   callback(null, res);
+                 });
+};
+
+post.githubUser = (userDetails, callback) => {
+  connect.query(`INSERT INTO users (username, avatar_url) VALUES ($1, $2) RETURNING id`, [userDetails.username, userDetails.avatar_url], (err, res) => {
     if (err) return callback(err);
 
     callback(null, res);

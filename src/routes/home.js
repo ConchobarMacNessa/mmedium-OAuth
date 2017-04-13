@@ -4,8 +4,9 @@ module.exports = {
   method: 'GET',
   path: '/',
   config: {
-    auth: false,
+    auth: { strategy: 'base', mode: 'try' },
     handler: (req, reply) => {
+      console.log(req.auth);
       get.articles((err, articles) => {
         if (err) {
           console.log(err);

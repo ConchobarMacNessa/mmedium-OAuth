@@ -40,14 +40,20 @@
     </a>
     {{/if}}
 
-    <form class="search__form" action="/search" method="get">
+    <!-- <form class="search__form" action="/search" method="get">
       <svg class="search__icon" viewBox="0 0 25 25">
         <path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624
         0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13
         4.75-4.75 4.75S6.5 13.62 6.5 11z"/>
       </svg>
       <input class="search__input" name="q" type="text" placeholder="Search articles" required autocomplete="off"/>
-    </form>
+    </form> -->
+    {{#if credentials.username}}
+    <div class='user_credentials'>
+      <img class="item__avatar" src="{{avatar_url}}" alt="user avatar"/>
+      <p class='welcome_note'>Welcome, {{username}}</p>
+    </div>
+    {{/if}}
     {{credentials.username}}
 
 
