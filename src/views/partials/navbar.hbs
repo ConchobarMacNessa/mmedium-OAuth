@@ -49,10 +49,8 @@
       <input class="search__input" name="q" type="text" placeholder="Search articles" required autocomplete="off"/>
     </form> -->
     {{#if credentials.username}}
-      <div class='user_credentials'>
-        <img class="item__avatar" src="{{credentials.avatar_url}}" alt="user avatar"/>
-        <p class='welcome_note'>Welcome, {{credentials.username}}</p>
-      </div>
+      <img class="item__avatar" src="{{credentials.avatar_url}}" alt="user avatar"/>
+      <div class='welcome_note'>Welcome, {{credentials.username}}</div>
     {{/if}}
 
 
