@@ -41,3 +41,7 @@ So that I benefit from logging in with Github OAuth, and don't have to do any pr
 ### TLS issues
 
 We had a few issues setting up TLS with Heroku and Travis. Heroku needed access to our keys and certs, however there is no way to do this without paying $20/month. However, Heroku is already HTTPS, so the server was only HTTP when running from our local server. There are several work arounds to this, however in the interest of time we decided to remove tls from our local server and rely on Heroku's HTTPS.
+
+### Storing info in the cookie
+
+We ran into issues when we tried to store the access token/username/avatar url in the cookie, namely they weren't storing. We found that this was because auth was set to false in our home route, which meant there was no attempt to store our info in the cookie. This was changed when we set auth to `{ strategy: 'base', mode: 'try' }`

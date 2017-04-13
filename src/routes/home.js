@@ -6,7 +6,6 @@ module.exports = {
   config: {
     auth: { strategy: 'base', mode: 'try' },
     handler: (req, reply) => {
-      console.log(req.auth);
       get.articles((err, articles) => {
         if (err) {
           console.log(err);
